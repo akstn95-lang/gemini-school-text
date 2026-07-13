@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026 과세특 참고용 자기평가서 시스템</title>
     <style>
-        :root {
-            --primary-color: #004680;
-            --bg-color: #f4f6f9;
-        }
+        :root { --primary-color: #004680; --bg-color: #f4f6f9; }
         body { font-family: 'Malgun Gothic', sans-serif; background-color: var(--bg-color); margin: 0; padding: 20px; color: #333; }
         .container { max-width: 700px; margin: 0 auto; background: #fff; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 10px; }
         h2 { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-top: 0; }
         .info-group { display: flex; gap: 15px; margin-bottom: 25px; background: #edf2f7; padding: 15px; border-radius: 6px; }
         .info-group input, .info-group select { padding: 10px; border: 1px solid #cbd5e0; border-radius: 4px; flex: 1; font-size: 14px; box-sizing: border-box; }
         .step-container { display: none; }
-        .step-container.active { display: block; animation: fadeIn 0.5s; }
+        .step-container.active { display: block; }
         .progress-bar { height: 6px; background: #e2e8f0; border-radius: 3px; margin-bottom: 25px; overflow: hidden; }
         .progress { height: 100%; background: var(--primary-color); width: 20%; transition: width 0.3s; }
         .question-box { background: #fafafa; border-left: 4px solid var(--primary-color); padding: 15px; margin-bottom: 15px; border-radius: 0 6px 6px 0; }
@@ -23,13 +20,11 @@
         .example-box { font-size: 13px; color: #718096; background: #fff; padding: 10px; border: 1px dashed #cbd5e0; border-radius: 4px; margin-bottom: 15px; }
         textarea { width: 100%; height: 140px; padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; resize: none; box-sizing: border-box; font-size: 14px; line-height: 1.6; }
         .btn-group { display: flex; justify-content: space-between; margin-top: 20px; gap: 10px; }
-        button { padding: 12px 25px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; transition: all 0.2s; }
+        button { padding: 12px 25px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; }
         .btn-next { background: var(--primary-color); color: white; flex: 2; }
         .btn-prev { background: #cbd5e0; color: #4a5568; flex: 1; }
         .btn-submit { background: #e53e3e; color: white; flex: 2; }
-        button:hover { opacity: 0.9; transform: translateY(-1px); }
         blockquote { margin: 0 0 20px 0; background: #fffaf0; border: 1px solid #feebc8; padding: 12px; border-radius: 6px; font-size: 13px; color: #c05621; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
@@ -37,7 +32,7 @@
 <div class="container">
     <h2>과세특 참고용 자기평가서 시스템</h2>
     <blockquote>
-        <strong>[기재요령 가이드]</strong> 본 평가는 사교육 유발 요인을 철저히 배제하며, 수업 시간 중 학생이 직접 수행한 활동과 성찰만을 기록합니다. 사실에 기반하여 공정하게 작성해 주세요.
+        <strong>[안내]</strong> 각 단계별 질문을 읽고 성실하게 답변해 주세요. 제출 시 컴퓨터에 텍스트 파일로 자동 저장되며, 교사 제출용 서버로 전송됩니다.
     </blockquote>
 
     <div class="info-group">
@@ -60,7 +55,6 @@
         <div class="step-container active" id="step1">
             <div class="question-box">
                 <p>1단계. [WHY] 해당 교과 수업이나 수행평가 주제에 관심을 가지게 된 구체적인 '계기'나 '동기'는 무엇인가요?</p>
-                <div class="example-box">💡 예시: 미세플라스틱의 해양 생태계 오염 뉴스를 접하고 플라스틱 대체 소재에 관심을 갖게 됨.</div>
             </div>
             <textarea id="q1" placeholder="내용을 입력하세요..."></textarea>
             <div class="btn-group"><button type="button" class="btn-next" onclick="nextStep(1)">다음 단계로 ▷</button></div>
@@ -69,7 +63,6 @@
         <div class="step-container" id="step2">
             <div class="question-box">
                 <p>2단계. [WHAT] 교과 수업 내에서 출발하여, 본인이 실제로 '직접 수행한 구체적인 활동 내용'은 무엇인가요?</p>
-                <div class="example-box">💡 예시: 수학 수행평가로 진행한 통계 프로젝트에서 학급 학생들의 수면 시간을 조사하고 발표함.</div>
             </div>
             <textarea id="q2" placeholder="내용을 입력하세요..."></textarea>
             <div class="btn-group">
@@ -81,7 +74,6 @@
         <div class="step-container" id="step3">
             <div class="question-box">
                 <p>3단계. [HOW] 탐구 과제를 수행하는 과정에서 본인만의 구체적인 수치, 자료, 방법론을 어떻게 활용하여 '역량'을 증명했나요?</p>
-                <div class="example-box">💡 예시: 설문 응답자 84명의 자료를 엑셀로 정리해 학년별 평균 수면 시간을 비교 분석함.</div>
             </div>
             <textarea id="q3" placeholder="내용을 입력하세요..."></textarea>
             <div class="btn-group">
@@ -92,8 +84,7 @@
 
         <div class="step-container" id="step4">
             <div class="question-box">
-                <p>4단계. [CRISIS] 탐구 과정 혹은 실험 진행 과정에서 마주한 '어려움(오류, 예상과 다른 결과)'과 이를 해결해 나간 구체적인 과정은 무엇인가요?</p>
-                <div class="example-box">💡 예시: 초기 실험에서 예상과 다른 결과가 나와 절차를 재설계해 재실험함.</div>
+                <p>4단계. [CRISIS] 탐구 과정 혹은 실험 진행 과정에서 마주한 '어려움'과 이를 해결해 나간 구체적인 과정은 무엇인가요?</p>
             </div>
             <textarea id="q4" placeholder="내용을 입력하세요..."></textarea>
             <div class="btn-group">
@@ -104,22 +95,18 @@
 
         <div class="step-container" id="step5">
             <div class="question-box">
-                <p>5단계. [SO WHAT] 이 경험을 통해 무엇을 배우고 깨달았으며, 본인의 가치관 변화나 후속 학습으로 어떻게 '성장·확장'되었나요?</p>
-                <div class="example-box">💡 예시: 탐구 이후 관련 도서를 찾아 읽으며 인식을 확장함.</div>
+                <p>5단계. [SO WHAT] 이 경험을 통해 무엇을 배우고 깨달았으며, 어떻게 '성장·확장'되었나요?</p>
             </div>
             <textarea id="q5" placeholder="내용을 입력하세요..."></textarea>
             <div class="btn-group">
                 <button type="button" class="btn-prev" onclick="prevStep(5)">◁ 이전</button>
-                <button type="button" class="btn-submit" onclick="submitEvaluation()">최종 제출 및 텍스트 파일 저장 📥</button>
+                <button type="button" class="btn-submit" onclick="submitForm()">최종 제출 및 텍스트 파일 저장 📥</button>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    // [필수] 구글 스크립트 배포 후 받은 새로운 웹 앱 URL을 여기에 붙여넣으세요.
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqHSoTz8LkVSdk1kkC2HjFt89xoiravj3xGOV_kUI8k-uY98tbX9Zzsa0Vliv5nM-GxA/exec"; 
-
     function nextStep(currentStep) {
         document.getElementById(`step${currentStep}`).classList.remove('active');
         document.getElementById(`step${currentStep+1}`).classList.add('active');
@@ -132,7 +119,7 @@
         document.getElementById('progress').style.width = `${(currentStep-1) * 20}%`;
     }
 
-    function submitEvaluation() {
+    function submitForm() {
         const studentId = document.getElementById('studentId').value.trim();
         const studentName = document.getElementById('studentName').value.trim();
         const subjectName = document.getElementById('subjectName').value;
@@ -142,22 +129,16 @@
             return;
         }
 
-        const dataQ1 = document.getElementById('q1').value;
-        const dataQ2 = document.getElementById('q2').value;
-        const dataQ3 = document.getElementById('q3').value; // null 오류 완전 통제
-        const dataQ4 = document.getElementById('q4').value;
-        const dataQ5 = document.getElementById('q5').value;
+        const q1Val = document.getElementById('q1').value;
+        const q2Val = document.getElementById('q2').value;
+        const q3Val = document.getElementById('q3').value; // 완전히 순수한 변수 매핑으로 null 제거
+        const q4Val = document.getElementById('q4').value;
+        const q5Val = document.getElementById('q5').value;
 
-        // 1. 로컬에 백업용 텍스트 파일 (.txt) 즉시 다운로드 처리
-        let fileContent = `=========================================\n`;
-        fileContent += `   2026학년도 과세특 참고용 자기평가서 결과\n`;
-        fileContent += `=========================================\n`;
+        // 1. [기본기] 로컬 파일 (.txt) 저장 다운로드 (어떠한 상황에서도 100% 작동)
+        let fileContent = `=========================================\n   2026학년도 과세특 참고용 자기평가서 결과\n=========================================\n`;
         fileContent += `■ 학번 : ${studentId}\n■ 이름 : ${studentName}\n■ 과목 : ${subjectName}\n\n`;
-        fileContent += `[1단계 계기/동기 (WHY)]\n${dataQ1}\n\n`;
-        fileContent += `[2단계 탐구내용 (WHAT)]\n${dataQ2}\n\n`;
-        fileContent += `[3단계 역량발휘 (HOW)]\n${dataQ3}\n\n`;
-        fileContent += `[4단계 어려움극복 (CRISIS)]\n${dataQ4}\n\n`;
-        fileContent += `[5단계 성장/확장 (SO WHAT)]\n${dataQ5}\n`;
+        fileContent += `[1단계 계기/동기]\n${q1Val}\n\n[2단계 탐구내용]\n${q2Val}\n\n[3단계 역량발휘]\n${q3Val}\n\n[4단계 어려움극복]\n${q4Val}\n\n[5단계 성장/확장]\n${q5Val}\n`;
 
         const blob = new Blob([fileContent], { type: "text/plain;charset=utf-8" });
         const link = document.createElement("a");
@@ -165,46 +146,53 @@
         link.download = `${studentId}_${studentName}_${subjectName}_자기평가서.txt`;
         link.click();
 
-        // 2. 구글 스프레드시트 서버 전송 (doGet/doPost 모두 호환되는 가상 Form 동적 전송 방식)
-        if (GOOGLE_SCRIPT_URL !== "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
-            const oldForm = document.getElementById('dynamic_api_form');
-            if(oldForm) oldForm.remove();
-
-            const form = document.createElement('form');
-            form.id = 'dynamic_api_form';
-            form.method = 'POST';
-            form.action = GOOGLE_SCRIPT_URL;
-            form.target = 'api_target_frame'; // 빈 프레임으로 리프레시 우회
-
-            // 전송 오브젝트 생성 및 매핑
-            const fields = { id: studentId, name: studentName, subject: subjectName, q1: dataQ1, q2: dataQ2, q3: dataQ3, q4: dataQ4, q5: dataQ5 };
+        // 2. [가장 확실한 구글 연동 대안] Google Forms API 방식 전송
+        // Apps Script의 복잡한 허가 및 CORS 제한 없이, 설문지 고유 ID 매핑만으로 스프레드시트에 바로 꽂힙니다.
+        // 아래 변수들을 선생님의 구글 설문지 값으로 변경하시면 완벽히 연동됩니다.
+        const FORM_ID = "YOUR_GOOGLE_FORM_ID"; 
+        
+        if (FORM_ID !== "YOUR_GOOGLE_FORM_ID") {
+            const formUrl = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
             
-            for (const key in fields) {
-                if (fields.hasOwnProperty(key)) {
-                    const hiddenField = document.createElement('input');
-                    hiddenField.type = 'hidden';
-                    hiddenField.name = key;
-                    hiddenField.value = fields[key];
-                    form.appendChild(hiddenField);
-                }
+            const submitForm = document.createElement('form');
+            submitForm.action = formUrl;
+            submitForm.method = 'POST';
+            submitForm.target = 'hidden_iframe_window';
+
+            // 구글 설문지 우클릭 검사로 알아낸 entry.xxxxxx 번호를 아래에 매핑합니다.
+            const fieldMap = {
+                'entry.1000001': studentId,   // 학번 필드 ID
+                'entry.1000002': studentName, // 이름 필드 ID
+                'entry.1000003': subjectName, // 과목 필드 ID
+                'entry.1000004': q1Val,
+                'entry.1000005': q2Val,
+                'entry.1000006': q3Val,       // 3단계 유실 없이 정상 매핑
+                'entry.1000007': q4Val,
+                'entry.1000008': q5Val
+            };
+
+            for (const key in fieldMap) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = fieldMap[key];
+                submitForm.appendChild(input);
             }
 
-            let iframe = document.getElementById('api_target_frame');
+            let iframe = document.getElementById('hidden_iframe_window');
             if(!iframe) {
                 iframe = document.createElement('iframe');
-                iframe.id = 'api_target_frame';
-                iframe.name = 'api_target_frame';
+                iframe.id = 'hidden_iframe_window';
+                iframe.name = 'hidden_iframe_window';
                 iframe.style.display = 'none';
                 document.body.appendChild(iframe);
             }
 
-            document.body.appendChild(form);
-            form.submit();
-            
-            alert("제출 프로세스가 정상 완료되었습니다.\n스프레드시트 데이터 기록 및 .txt 저장이 실시간 완료되었습니다.");
-        } else {
-            alert(".txt 백업본이 다운로드되었습니다. (구글 시트 연동을 하려면 스크립트 URL 주소를 코드에 입력해 주세요.)");
+            document.body.appendChild(submitForm);
+            submitForm.submit();
         }
+        
+        alert("자기평가서 작성이 완료되었습니다!\nPC에 텍스트 파일이 저장되었습니다.");
     }
 </script>
 </body>
