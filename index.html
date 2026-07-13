@@ -6,12 +6,12 @@
     <title>2026 과세특 참고용 자기평가서 시스템</title>
     <style>
         :root {
-            --primary-color: #004680; /* 동국대 브랜드 컬러 반영 */
+            --primary-color: #004680;
             --bg-color: #f4f6f9;
         }
         body { font-family: 'Malgun Gothic', sans-serif; background-color: var(--bg-color); margin: 0; padding: 20px; color: #333; }
         .container { max-width: 700px; margin: 0 auto; background: #fff; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 10px; }
-        h2 { text-color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-top: 0; }
+        h2 { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-top: 0; }
         .info-group { display: flex; gap: 15px; margin-bottom: 25px; background: #edf2f7; padding: 15px; border-radius: 6px; }
         .info-group input, .info-group select { padding: 10px; border: 1px solid #cbd5e0; border-radius: 4px; flex: 1; font-size: 14px; }
         .step-container { display: none; }
@@ -37,10 +37,9 @@
 <div class="container">
     <h2>과세특 참고용 자기평가서 시스템</h2>
     <blockquote>
-        <strong>[기재요령 가이드]</strong> 본 평가는 사교육 유발 요인을 철저히 배제하며, 수업 시간 중 학생이 직접 수행한 활동과 성찰만을 기록합니다. 거짓이나 과장 없이 사실에 기반하여 명사형 어미(~함, ~임)로 간결하게 작성해 주세요[cite: 1].
+        <strong>[기재요령 가이드]</strong> 본 평가는 사교육 유발 요인을 철저히 배제하며, 수업 시간 중 학생이 직접 수행한 활동과 성찰만을 기록합니다. 거짓이나 과장 없이 사실에 기반하여 명사형 어미(~함, ~임)로 간결하게 작성해 주세요.
     </blockquote>
 
-    <!-- 학생 인적사항 및 기본 정보 -->
     <div class="info-group">
         <input type="text" id="studentId" placeholder="학번 (예: 30101)" required>
         <input type="text" id="studentName" placeholder="성명" required>
@@ -57,9 +56,7 @@
 
     <div class="progress-bar"><div class="progress" id="progress"></div></div>
 
-    <!-- MBTI 설문형 5단계 성찰 질문 (WHAT-WHY-HOW-SO WHAT 구조 반영) -->
     <div id="surveyForm">
-        <!-- 1단계: 계기/동기 (WHY) -->
         <div class="step-container active" id="step1">
             <div class="question-box">
                 <p>1단계. [WHY] 해당 교과 수업이나 수행평가 주제에 관심을 가지게 된 구체적인 '계기'나 '동기'는 무엇인가요?</p>
@@ -69,11 +66,10 @@
             <div class="btn-group"><button type="button" class="btn-next" onclick="nextStep(1)">다음 단계로 ▷</button></div>
         </div>
 
-        <!-- 2단계: 탐구 내용/출발 (WHAT) -->
         <div class="step-container" id="step2">
             <div class="question-box">
                 <p>2단계. [WHAT] 대학 수준의 선행이 아닌 교과 수업 내에서 출발하여, 본인이 실제로 '직접 수행한 구체적인 활동 내용'은 무엇인가요?</p>
-                <div class="example-box">💡 예시: 수학 수행평가로 진행한 통계 프로젝트에서 학급 학생들의 수면 시간을 조사하고 표준편차를 직접 계산하여 발표함[cite: 2].</div>
+                <div class="example-box">💡 예시: 수학 수행평가로 진행한 통계 프로젝트에서 학급 학생들의 수면 시간을 조사하고 표준편차를 직접 계산하여 발표함.</div>
             </div>
             <textarea id="q2" placeholder="내용을 입력하세요..."></textarea>
             <div class="btn-group">
@@ -82,11 +78,10 @@
             </div>
         </div>
 
-        <!-- 3단계: 역량 발휘/방법론 (HOW) -->
         <div class="step-container" id="step3">
             <div class="question-box">
                 <p>3단계. [HOW] 탐구 과제를 수행하는 과정에서 본인만의 구체적인 수치, 자료, 방법론을 어떻게 활용하여 '역량'을 증명했나요?</p>
-                <div class="example-box">💡 예시: 설문 응답자 84명의 자료를 엑셀로 정리해 학년별 평균 수면 시간을 비교 분석함[cite: 2].</div>
+                <div class="example-box">💡 예시: 설문 응답자 84명의 자료를 엑셀로 정리해 학년별 평균 수면 시간을 비교 분석함.</div>
             </div>
             <textarea id="q3" placeholder="내용을 입력하세요..."></textarea>
             <div class="btn-group">
@@ -95,11 +90,10 @@
             </div>
         </div>
 
-        <!-- 4단계: 위기 극복 -->
         <div class="step-container" id="step4">
             <div class="question-box">
                 <p>4단계. [CRISIS] 탐구 과정 혹은 실험 진행 과정에서 마주한 '어려움(오류, 예상과 다른 결과)'과 이를 해결해 나간 구체적인 과정은 무엇인가요?</p>
-                <div class="example-box">💡 예시: 초기 실험에서 예상과 다른 결과가 나와 변수 통제에 오류가 있었음을 발견하고, 절차를 재설계해 재실험함[cite: 2].</div>
+                <div class="example-box">💡 예시: 초기 실험에서 예상과 다른 결과가 나와 변수 통제에 오류가 있었음을 발견하고, 절차를 재설계해 재실험함.</div>
             </div>
             <textarea id="q4" placeholder="내용을 입력하세요..."></textarea>
             <div class="btn-group">
@@ -108,11 +102,10 @@
             </div>
         </div>
 
-        <!-- 5단계: 성장과 확장 (SO WHAT) -->
         <div class="step-container" id="step5">
             <div class="question-box">
                 <p>5단계. [SO WHAT] 이 경험을 통해 무엇을 배우고 깨달았으며, 본인의 가치관 변화나 후속 학습(독서, 동아리)으로 어떻게 '성장·확장'되었나요?</p>
-                <div class="example-box">💡 예시: 탐구 이후 일상 속 플라스틱 사용 습관을 점검하는 캠페인을 기획하고, 관련 도서를 찾아 읽으며 인식을 확장함[cite: 2].</div>
+                <div class="example-box">💡 예시: 탐구 이후 일상 속 플라스틱 사용 습관을 점검하는 캠페인을 기획하고, 관련 도서를 찾아 읽으며 인식을 확장함.</div>
             </div>
             <textarea id="q5" placeholder="내용을 입력하세요..."></textarea>
             <div class="btn-group">
@@ -124,8 +117,8 @@
 </div>
 
 <script>
-    // 구글 Apps Script 배포 후 생성된 웹 앱 웹 URL을 여기에 입력하세요.
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUqK-fd3yNe9EBsdG0Wlhx-cz9pNuoC313RIt9KA08kyL3feTDG1-v09nfwAAfivmzxA/exec"; 
+    // [중요] 여기에 Google Apps Script 배포 후 받은 웹 앱 URL을 반드시 입력해야 연동됩니다.
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwaHwPOOeOQ5gdo2OdfVpKY0DDUKZ5t5pkAow4rAqbCFkrQRCbE9puG0Qo0_9hYsoyV-g/exec"; 
 
     function nextStep(currentStep) {
         document.getElementById(`step${currentStep}`).classList.remove('active');
@@ -155,12 +148,12 @@
             subject: subjectName,
             q1: document.getElementById('q1').value,
             q2: document.getElementById('q2').value,
-            q3: document.getElementById('cbd5e0' ? document.getElementById('q3').value : document.getElementById('q3').value),
+            q3: document.getElementById('q3').value, // 버그 수정 완료
             q4: document.getElementById('q4').value,
             q5: document.getElementById('q5').value
         };
 
-        // 1. 텍스트 파일 생성 및 로컬 저장 다운로드
+        // 1. 로컬에 텍스트 파일 (.txt) 저장 작동
         let fileContent = `=========================================\n`;
         fileContent += `   2026학년도 과세특 참고용 자기평가서 결과\n`;
         fileContent += `=========================================\n`;
@@ -177,21 +170,21 @@
         link.download = `${answers.id}_${answers.name}_${answers.subject}_자기평가서.txt`;
         link.click();
 
-        // 2. 구글 API (Spreadsheet) 데이터 비동기 전송
-        if (GOOGLE_SCRIPT_URL !== "YOUR_GOOGLE_APPS_SCRIPT_URL") {
+        // 2. 구글 스프레드시트 API 전송 작동 (CORS 통신 방식 최적화)
+        if (GOOGLE_SCRIPT_URL !== "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
             fetch(GOOGLE_SCRIPT_URL, {
                 method: "POST",
-                mode: "no-cors",
-                headers: { "Content-Type": "application/json" },
+                mode: "no-cors", 
+                headers: { "Content-Type": "text/plain" }, // Apps Script 교차 차단 우회용 설정
                 body: JSON.stringify(answers)
             }).then(() => {
-                alert("구글 스프레드시트 전송 및 텍스트 파일 다운로드가 완료되었습니다!");
+                alert("제출 완료! 텍스트 파일 저장 및 구글 데이터 전송이 성공했습니다.");
             }).catch(err => {
                 console.error(err);
-                alert("텍스트 파일은 다운로드되었으나, 구글 API 전송에 실패했습니다 URL을 확인하세요.");
+                alert("텍스트 파일은 저장되었으나 구글 서버 전송에 실패했습니다. API 설정을 확인하세요.");
             });
         } else {
-            alert("텍스트 파일이 다운로드되었습니다. (구글 API URL 설정 필요)");
+            alert("텍스트 파일이 다운로드되었습니다. (구글 API 연동을 원하시면 코드 내부 URL을 수정하세요)");
         }
     }
 </script>
